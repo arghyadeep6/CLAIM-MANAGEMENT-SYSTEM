@@ -1,0 +1,65 @@
+﻿@model IEnumerable<memberportal.Models.memberpremium>
+
+@{
+    ViewData["Title"] = "Viewbills";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Viewbills</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.memberid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.policyid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.topup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.premium)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.paiddate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.memberid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.policyid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.topup)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.premium)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.paiddate)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
